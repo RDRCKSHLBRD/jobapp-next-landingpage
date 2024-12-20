@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header";  // Should match Header.js
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
