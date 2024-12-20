@@ -3,4 +3,4 @@ const nextConfig = {
   output: 'standalone'
 };
 
-module.exports = nextConfig;  // Changed to CommonJS syntax
+module.exports = nextConfig;
