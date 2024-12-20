@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="flex justify-between p-4 shadow-md">
+    <header className="flex justify-between p-4">
       <div className="text-xl font-bold">The Job App</div>
       <nav>
         <ul className="flex gap-4">

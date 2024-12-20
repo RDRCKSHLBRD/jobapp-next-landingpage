@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white p-8">
+    <footer className="bg-[#002F68] text-white p-8">
+
       <div className="flex justify-between">
         <div>
           <h3 className="font-bold mb-2">Quick Links</h3>
