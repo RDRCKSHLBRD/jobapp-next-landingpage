@@ -2,14 +2,18 @@ export default function HowItWorks() {
   return (
     <section
       className="py-12 text-center bg-[#F0F6FF]"
-      style={{ paddingTop: '3rem', paddingBottom: '4rem' }} // Reduced top padding slightly
+      style={{ paddingTop: '3rem', paddingBottom: '2rem' }} // Reduced bottom padding
     >
       <div
-        className="mx-auto max-w-4xl bg-white rounded-t-lg px-8 py-12 shadow-lg"
-        style={{ borderRadius: '20px 20px 0 0', marginTop: '-20px' }} // Added slight negative margin
+        className="mx-auto max-w-4xl bg-white rounded-t-lg px-8 py-8 shadow-lg"
+        style={{
+          borderRadius: '20px 20px 0 0',
+          marginTop: '-20px',
+          border: '0.5px solid lightgray', // Light gray border for the main card
+        }}
       >
         <h2 className="text-3xl font-bold mb-4">How The Job App Works</h2>
-        <p className="text-gray-600 mb-8">Your Job Search, Simplified</p>
+        <p className="text-gray-600 mb-6">Your Job Search, Simplified</p> {/* Adjusted margin below */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           {/* List Section */}
           <ol className="list-none mx-auto text-left space-y-6 text-lg text-gray-700 lg:w-1/2">
@@ -36,17 +40,26 @@ export default function HowItWorks() {
           <div
             className="mt-8 lg:mt-0 lg:ml-8"
             style={{
-              borderRadius: '20px',
-              width: '428px',
-              height: '314px',
-              backgroundColor: '#F0F6FF',
-              overflow: 'hidden',
+              borderRadius: '10px', // Rounded corners for the light blue card
+              width: '418px', // Light blue card's width
+              height: '314px', // Light blue card's height
+              backgroundColor: '#F0F6FF', // Light blue background
+              overflow: 'hidden', // Clipping for the content
+              border: '0.5px solid lightgray', // Light gray border for the blue card
+              display: 'flex', // Center the image inside
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <img
               src="/images/Professional-High-Five.jpeg"
               alt="Professional High Five"
-              className="w-full h-full object-cover"
+              style={{
+                width: '287px', // Picture's width
+                height: '253px', // Picture's height
+                borderRadius: '10px', // Optional: Match the rounded corners of the card (if needed)
+                objectFit: 'cover', // Ensure proper scaling and clipping
+              }}
             />
           </div>
         </div>

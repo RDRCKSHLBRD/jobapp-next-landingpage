@@ -32,9 +32,7 @@ export default function HeroSection() {
         </p>
 
         {/* Buttons */}
-        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          {/* Hire Top Talent */}
           <button
             className="border-2 border-[#3B82F6] text-[#1D3557] text-[16px] font-medium leading-[24px] tracking-[0.005em] text-center px-[60px] py-[12px] rounded-[4px] hover:bg-blue-50 hover:text-blue-600"
             style={{
@@ -44,8 +42,6 @@ export default function HeroSection() {
           >
             Hire Top Talent
           </button>
-
-          {/* Get Your Dream Job */}
           <button
             className="bg-[#3B82F6] text-white text-[16px] font-medium leading-[24px] tracking-[0.005em] text-center px-[60px] py-[12px] rounded-[4px] hover:bg-blue-600"
             style={{
@@ -56,13 +52,17 @@ export default function HeroSection() {
             Get Your Dream Job
           </button>
         </div>
-
-
-
       </div>
 
       {/* Hero Image */}
-      <div className="mt-8 mx-auto w-[80%] h-[500px] relative">
+      <div
+        className="mt-8 mx-auto relative"
+        style={{
+          width: '1160px', // Explicit width
+          height: '611px', // Explicit height
+          overflow: 'hidden', // Clip content equivalent
+        }}
+      >
         <img
           src="/images/frameOne-hero.png"
           alt="Hero Background"
