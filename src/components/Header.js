@@ -1,18 +1,50 @@
+"use client";
+
+import { useState } from "react";
+import NavLink from "@/components/NavLink";  // Updated import path
+
 export default function Header() {
+  const [activeLink, setActiveLink] = useState("Features");
+
+  const navItems = [
+    { text: "Features", href: "#features" },
+    { text: "How It Works", href: "#how-it-works" },
+    { text: "Pricing", href: "#pricing" },
+    { text: "Contact Us", href: "#contact" },
+  ];
+
   return (
-    <header className="flex justify-between items-center px-8 py-4 bg-white shadow">
-      <div className="text-xl font-bold text-blue-500">The Job App</div>
-      <nav>
-        <ul className="flex gap-8">
-          <li><a href="#features" className="hover:text-blue-500">Features</a></li>
-          <li><a href="#how-it-works" className="hover:text-blue-500">How It Works</a></li>
-          <li><a href="#pricing" className="hover:text-blue-500">Pricing</a></li>
-          <li><a href="#contact" className="hover:text-blue-500">Contact Us</a></li>
-        </ul>
-      </nav>
+    <header className="flex justify-between items-center px-8 py-4">
+      {/* Logo */}
       <div className="flex items-center gap-4">
-        <button className="text-gray-700">Sign In</button>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">Sign Up</button>
+        <img
+          src="/images/JobApp-Logo.svg"
+          alt="The Job App Logo"
+          className="h-20"
+        />
+      </div>
+
+      {/* Navigation Links */}
+      <nav className="flex gap-5">
+        {navItems.map((item, index) => (
+          <NavLink
+            key={index}
+            text={item.text}
+            href={item.href}
+            isActive={activeLink === item.text}
+            onClick={() => setActiveLink(item.text)}
+          />
+        ))}
+      </nav>
+
+      {/* Call-to-Action Buttons */}
+      <div className="flex items-center gap-4">
+        <button className="text-[#3B82F6] hover:text-[#1D3557]">
+          Sign In
+        </button>
+        <button className="bg-[#3B82F6] text-white px-4 py-2 rounded-[4px] hover:bg-blue-600">
+          Sign Up
+        </button>
       </div>
     </header>
   );
