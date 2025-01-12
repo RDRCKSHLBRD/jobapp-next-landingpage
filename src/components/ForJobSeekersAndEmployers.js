@@ -1,6 +1,12 @@
 export default function ForJobSeekersAndEmployers() {
   return (
-    <section className="py-12 bg-white">
+    <section
+      className="py-12 bg-white relative"
+      style={{
+        marginTop: "-50px", // Adjust this to fine-tune overlap
+        zIndex: 10, // Ensure it overlaps properly
+      }}
+    >
       {/* Section Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#1D3557] mb-2">
@@ -23,16 +29,15 @@ export default function ForJobSeekersAndEmployers() {
               transform: "translateX(-25%)", // Move image left by 25%
             }}
           />
-
           <div
             className="absolute bg-white p-6 rounded-lg shadow-lg"
             style={{
               width: "345px",
               height: "216px",
-              right: "20%", // Move the card closer to the image
+              right: "20%",
               top: "50%",
               transform: "translateY(-50%)",
-              border: '0.5px solid lightgray', // Added border here
+              border: "0.5px solid lightgray",
             }}
           >
             <h3 className="text-xl font-semibold text-[#1D3557] mb-2">
@@ -42,12 +47,10 @@ export default function ForJobSeekersAndEmployers() {
               AI-powered tools to improve job matches and applications.
             </p>
             <p className="text-sm text-gray-700">
-              Boost your chances with skill recommendations and optimized resumes.
+              Boost your chances with skill recommendations and optimized
+              resumes.
             </p>
           </div>
-
-
-
         </div>
 
         {/* Employer Section */}
@@ -68,7 +71,7 @@ export default function ForJobSeekersAndEmployers() {
               left: "20%",
               top: "50%",
               transform: "translateY(-50%)",
-              border: '0.5px solid lightgray', // Added border here
+              border: "0.5px solid lightgray",
             }}
           >
             <h3 className="text-xl font-semibold text-[#1D3557] mb-2">
