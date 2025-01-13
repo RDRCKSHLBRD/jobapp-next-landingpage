@@ -82,7 +82,7 @@ export default function Footer() {
         <div className="col-span-3">
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <p className="text-sm">Have questions? We're here to help!</p>
+            <p className="text-sm">Have questions? We&apos;re here to help!</p>
             <p className="text-sm mt-2">
               📧 <a href="mailto:support@yourwebsite.com" className="hover:underline">
                 support@yourwebsite.com
