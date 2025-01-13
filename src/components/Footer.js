@@ -17,8 +17,8 @@ export default function Footer() {
           <Image
             src="/images/JobApp-Logo.svg"
             alt="The Job App Logo"
-            width={80}
-            height={80}
+            width={108}
+            height={88.9}
             className="mb-6"
             style={{ marginLeft: "-16px" }}
           />
