@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440.34 1027.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #d9e7ee;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #f8fdff;
+      }
+
+      .cls-4 {
+        fill: #a1dcf0;
+      }
+
+      .cls-5 {
+        fill: #a1ddef;
+      }
+
+      .cls-6 {
+        fill: #dcf4ff;
+      }
+
+      .cls-7 {
+        fill: #f1f8ff;
+      }
+
+      .cls-8 {
+        fill: #48bbd8;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x=".34" y=".29" width="1440" height="1027.21"/>
+    </clipPath>
+  </defs>
+  <g id="comp">
+    <g>
+      <rect class="cls-3" width="1440" height="1027.21"/>
+      <g class="cls-9">
+        <rect class="cls-2" x="383.52" y="192.64" width="330.84" height="330.84" transform="translate(-92.4 493.03) rotate(-45)"/>
+        <rect class="cls-8" x="374.82" y="715.52" width="330.84" height="330.84" rx="17.52" ry="17.52" transform="translate(-464.69 640.03) rotate(-45)"/>
+        <rect class="cls-5" x="119.27" y="975.07" width="330.84" height="330.84" rx="17.52" ry="17.52" transform="translate(-723.07 535.35) rotate(-45)"/>
+        <rect class="cls-7" x="638.37" y="451.98" width="330.84" height="330.84" rx="17.52" ry="17.52" transform="translate(-201.14 749.19) rotate(-45)"/>
+        <rect class="cls-7" x="121.92" y="-74.11" width="330.84" height="330.84" rx="17.52" ry="17.52" transform="translate(19.59 229.92) rotate(-45)"/>
+        <rect class="cls-4" x="-143.98" y="192.22" width="330.84" height="330.84" rx="17.52" ry="17.52" transform="translate(-246.61 119.91) rotate(-45)"/>
+        <rect class="cls-6" x="-173.52" y="580.07" width="676.2" height="330.84" rx="17.52" ry="17.52" transform="translate(-478.94 334.72) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+</svg>
