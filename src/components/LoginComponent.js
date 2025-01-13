@@ -17,21 +17,26 @@ export default function LoginComponent({ onClose }) {
       className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
       onClick={onClose} // Close on backdrop click
     >
-      {/* White Frame with Overlay Background */}
+      {/* Fullscreen Overlay */}
       <div
-        className="relative flex justify-center items-center w-[1440px] max-w-full h-[1024px] bg-white rounded-lg shadow-lg overflow-hidden"
+        className="relative flex flex-col justify-center items-center w-full h-full bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/images/OVERLAYhires.svg')`,
+        }}
         onClick={(e) => e.stopPropagation()} // Prevent click-through
       >
-        {/* Overlay SVG Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{
-            backgroundImage: `url('/images/OVERLAYhires.svg')`,
-          }}
-        ></div>
+        {/* Title Section */}
+        <div className="text-center mb-8">
+          <h1 className="text-[52px] font-semibold text-gray-800">
+            Login and Continue Your Journey
+          </h1>
+          <p className="text-[24px] text-black mt-4">
+            Continue where you left off—your next step is just a click away.
+          </p>
+        </div>
 
         {/* Login Card */}
-        <div className="relative bg-white p-8 rounded-lg shadow-lg flex flex-col w-[450px] max-h-[90vh] overflow-y-auto">
+        <div className="relative bg-white p-8 rounded-lg shadow-lg flex flex-col w-[564px] h-[650px] overflow-hidden">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -45,7 +50,7 @@ export default function LoginComponent({ onClose }) {
             {/* Google Login */}
             <button
               type="button"
-              className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-lg py-3 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-md py-3 hover:bg-gray-50 transition-colors"
             >
               <img
                 src="/images/icons/google-sm.svg"
@@ -75,7 +80,7 @@ export default function LoginComponent({ onClose }) {
               <input
                 type="email"
                 id="email"
-                className="w-full h-14 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full h-14 px-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter your email"
                 required
               />
@@ -93,7 +98,7 @@ export default function LoginComponent({ onClose }) {
                 <input
                   type={passwordVisible ? "text" : "password"}
                   id="password"
-                  className="w-full h-14 px-4 border border-gray-300 rounded-lg pr-12 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full h-14 px-4 border border-gray-300 rounded-md pr-12 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Must be at least 6 characters"
                   required
                 />
@@ -131,7 +136,7 @@ export default function LoginComponent({ onClose }) {
             {/* Login Button */}
             <button
               type="submit"
-              className="w-full h-14 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors"
+              className="w-full h-12 bg-blue-500 text-white text-sm font-medium rounded-md px-4 hover:bg-blue-600 transition-colors"
             >
               Login
             </button>
