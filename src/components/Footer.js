@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer
@@ -12,10 +14,12 @@ export default function Footer() {
       <div className="container mx-auto px-8 grid grid-cols-12 gap-6">
         {/* The Job App Logo */}
         <div className="col-span-2 flex items-start">
-          <img
+          <Image
             src="/images/JobApp-Logo.svg"
             alt="The Job App Logo"
-            className="h-20 mb-6"
+            width={80}
+            height={80}
+            className="mb-6"
             style={{ marginLeft: "-16px" }}
           />
         </div>
@@ -96,13 +100,13 @@ export default function Footer() {
             <p className="text-sm mb-2">Stay updated with the latest:</p>
             <div className="flex gap-4">
               <a href="#x" aria-label="X (formerly Twitter)">
-                <img src="/images/icons/X.svg" alt="X" className="w-6 h-6" />
+                <Image src="/images/icons/X.svg" alt="X" width={24} height={24} />
               </a>
               <a href="#instagram" aria-label="Instagram">
-                <img src="/images/icons/instagram.svg" alt="Instagram" className="w-6 h-6" />
+                <Image src="/images/icons/instagram.svg" alt="Instagram" width={24} height={24} />
               </a>
               <a href="#youtube" aria-label="YouTube">
-                <img src="/images/icons/youtube.svg" alt="YouTube" className="w-6 h-6" />
+                <Image src="/images/icons/youtube.svg" alt="YouTube" width={24} height={24} />
               </a>
             </div>
           </div>
