@@ -1,4 +1,4 @@
-export default function HeroSection() {
+export default function HeroSection({ onLaunchChecker }) {
   return (
     <section className="relative bg-[#F0F6FF] py-5">
       {/* Top Content: Heading, Subheading, and Buttons */}
@@ -89,7 +89,10 @@ export default function HeroSection() {
               Paste a job description and your resume to see how well they align.
               Start your journey to success now!
             </p>
-            <button className="px-6 py-2 border-2 border-[#3B82F6] rounded-md text-black text-sm font-medium hover:bg-blue-50">
+            <button
+              onClick={onLaunchChecker}
+              className="px-6 py-2 border-2 border-[#3B82F6] rounded-md text-black text-sm font-medium hover:bg-blue-50"
+            >
               Check My Match
             </button>
           </div>
