@@ -14,7 +14,7 @@ export default function NavLink({ text, href }) {
     <a
       href={href}
       onClick={handleClick}
-      className="px-4 py-2 text-base font-normal text-black rounded-md transition-all cursor-pointer border border-transparent hover:border-gray-300"
+      className="px-2 py-4 text-base font-normal text-black rounded-[4px] transition-all cursor-pointer border border-transparent hover:border-gray-300"
     >
       {text}
     </a>
