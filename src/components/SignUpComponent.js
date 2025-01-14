@@ -1,28 +1,33 @@
+"use client";
+
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Correct import for app directory
 
 export default function SignUpComponent({ onClose }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const router = useRouter(); // Use router from next/navigation
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
   const handleSignUpSubmit = (e) => {
-    e.preventDefault();
-    console.log("Sign-up form submitted"); // Placeholder for your sign-up logic
+    e.preventDefault(); // Prevent default form submission behavior
+    console.log("Sign-up form submitted");
+    router.push("/profile-creation"); // Navigate to profile creation
   };
 
   return (
     <div
       className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
-      onClick={onClose} // Close on backdrop click
+      onClick={onClose}
     >
       <div
         className="relative flex flex-col justify-center items-center w-full h-full bg-cover bg-center"
         style={{
           backgroundImage: `url('/images/OVERLAYhires.svg')`,
         }}
-        onClick={(e) => e.stopPropagation()} // Prevent click-through
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Title Section */}
         <div className="text-center mb-7">
@@ -85,7 +90,6 @@ export default function SignUpComponent({ onClose }) {
                 id="email"
                 className="w-full h-14 px-4 border border-gray-300 rounded-[4px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter your email"
-                required
               />
             </div>
 
@@ -103,15 +107,11 @@ export default function SignUpComponent({ onClose }) {
                   id="password"
                   className="w-full h-14 px-4 border border-gray-300 rounded-[4px] pr-12 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Must be at least 6 characters"
-                  required
                 />
                 <button
                   type="button"
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   onClick={togglePasswordVisibility}
-                  aria-label={
-                    passwordVisible ? "Hide password" : "Show password"
-                  }
                 >
                   <img
                     src={
@@ -142,7 +142,6 @@ export default function SignUpComponent({ onClose }) {
                   id="firstName"
                   className="w-full h-14 px-4 border border-gray-300 rounded-[4px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="John"
-                  required
                 />
               </div>
               <div className="flex-1">
@@ -157,11 +156,9 @@ export default function SignUpComponent({ onClose }) {
                   id="lastName"
                   className="w-full h-14 px-4 border border-gray-300 rounded-[4px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Doe"
-                  required
                 />
               </div>
             </div>
-
 
             {/* Terms and Conditions */}
             <div className="flex items-start">
@@ -169,7 +166,6 @@ export default function SignUpComponent({ onClose }) {
                 type="checkbox"
                 id="terms"
                 className="w-5 h-5 border-gray-300 rounded-[4px] focus:ring-blue-500"
-                required
               />
               <label
                 htmlFor="terms"
