@@ -11,12 +11,17 @@ import ForJobSeekersAndEmployers from "@/components/ForJobSeekersAndEmployers";
 import WhyJobApp from "@/components/WhyJobApp";
 import Testimonials from "@/components/Testimonials";
 import InstantJobFitChecker from "@/components/InstantJobFitChecker";
+import SignUpComponent from "@/components/SignUpComponent";
 
 export default function Home() {
   const [isCheckerOpen, setIsCheckerOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false); // State for Sign-Up modal
 
   const openChecker = () => setIsCheckerOpen(true);
   const closeChecker = () => setIsCheckerOpen(false);
+
+  const openSignUp = () => setIsSignUpOpen(true);
+  const closeSignUp = () => setIsSignUpOpen(false);
 
   return (
     <>
@@ -42,6 +47,19 @@ export default function Home() {
       <section id="contact">
         <Footer />
       </section>
+
+      {/* Add a button for opening the Sign-Up modal */}
+      <div className="fixed bottom-4 right-4">
+        <button
+          onClick={openSignUp}
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600"
+        >
+          Sign Up
+        </button>
+      </div>
+
+      {/* SignUpComponent Modal */}
+      {isSignUpOpen && <SignUpComponent onClose={closeSignUp} />}
 
       {/* InstantJobFitChecker Component */}
       {isCheckerOpen && <InstantJobFitChecker onClose={closeChecker} />}
