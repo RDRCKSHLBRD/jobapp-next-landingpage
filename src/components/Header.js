@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import NavLink from "@/components/NavLink";  // Updated import path
+import NavLink from "@/components/NavLink"; // Updated import path
 import LoginComponent from "@/components/LoginComponent"; // Import Login Component
+import SignUpComponent from "@/components/SignUpComponent"; // Import Sign Up Component
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState("Features");
   const [isLoginOpen, setIsLoginOpen] = useState(false); // State for login modal
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false); // State for sign-up modal
 
   const navItems = [
     { text: "Features", href: "#features" },
@@ -16,6 +18,7 @@ export default function Header() {
   ];
 
   const toggleLogin = () => setIsLoginOpen(!isLoginOpen);
+  const toggleSignUp = () => setIsSignUpOpen(!isSignUpOpen);
 
   return (
     <>
@@ -50,13 +53,20 @@ export default function Header() {
           >
             Sign In
           </button>
-          <button className="bg-[#3B82F6] text-white px-4 py-2 rounded-[4px] hover:bg-blue-600">
+          <button
+            onClick={toggleSignUp} // Open sign-up modal
+            className="bg-[#3B82F6] text-white px-4 py-2 rounded-[4px] hover:bg-blue-600"
+          >
             Sign Up
           </button>
         </div>
       </header>
 
-      {isLoginOpen && <LoginComponent onClose={toggleLogin} />} {/* Conditionally render LoginComponent */}
+      {/* Conditionally render LoginComponent */}
+      {isLoginOpen && <LoginComponent onClose={toggleLogin} />}
+
+      {/* Conditionally render SignUpComponent */}
+      {isSignUpOpen && <SignUpComponent onClose={toggleSignUp} />}
     </>
   );
 }
