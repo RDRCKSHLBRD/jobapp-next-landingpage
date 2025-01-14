@@ -27,30 +27,34 @@ export default function LoginComponent({ onClose }) {
       >
         {/* Title Section */}
         <div className="text-center mb-8">
-          <h1 className="text-[52px] font-semibold text-gray-800">
+          <h1 className="text-[45px] font-semibold text-gray-800">
             Login and Continue Your Journey
           </h1>
-          <p className="text-[24px] text-black mt-4">
+          <p className="text-[16px] text-black mt-4">
             Continue where you left off—your next step is just a click away.
           </p>
         </div>
 
         {/* Login Card */}
-        <div className="relative bg-white p-8 rounded-lg shadow-lg flex flex-col w-[564px] h-[650px] overflow-hidden">
+        <div className="relative bg-white p-8 rounded-[4px] shadow-lg flex flex-col w-[564px] h-[650px] overflow-hidden">
           {/* Close Button */}
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
             aria-label="Close"
           >
-            <span className="text-xl font-bold">×</span>
+            <span className="text-[30px] font-light">x</span>
           </button>
 
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+          {/* Form Section */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col space-y-4"
+          >
             {/* Google Login */}
             <button
               type="button"
-              className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-md py-3 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center bg-white border border-gray-300 rounded-[4px] py-3 hover:bg-gray-50 transition-colors mt-8 mb-3" // Added `mb-4` to separate from fields below
             >
               <img
                 src="/images/icons/google-sm.svg"
@@ -65,7 +69,7 @@ export default function LoginComponent({ onClose }) {
             {/* Divider */}
             <div className="flex items-center">
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="px-4 text-sm text-gray-500">OR</span>
+              <span className="px-4 text-sm text-gray-500 mt-3 mb-6">OR</span>
               <div className="flex-1 h-px bg-gray-300"></div>
             </div>
 
@@ -73,14 +77,14 @@ export default function LoginComponent({ onClose }) {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-[22px] font-medium text-gray-700 mt-10 mb-2"
               >
                 Email
               </label>
               <input
                 type="email"
                 id="email"
-                className="w-full h-14 px-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full h-14 px-4 border border-gray-300 rounded-[4px] focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter your email"
                 required
               />
@@ -90,15 +94,16 @@ export default function LoginComponent({ onClose }) {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-[22px] font-medium text-gray-700 mb-2"
               >
                 Password
               </label>
+
               <div className="relative">
                 <input
                   type={passwordVisible ? "text" : "password"}
                   id="password"
-                  className="w-full h-14 px-4 border border-gray-300 rounded-md pr-12 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full h-14 px-4 border border-gray-300 rounded-[4px] pr-12 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Must be at least 6 characters"
                   required
                 />
@@ -152,6 +157,7 @@ export default function LoginComponent({ onClose }) {
               </a>
             </div>
           </form>
+
         </div>
       </div>
     </div>
