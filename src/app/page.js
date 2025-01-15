@@ -15,7 +15,7 @@ import SignUpComponent from "@/components/SignUpComponent";
 
 export default function Home() {
   const [isCheckerOpen, setIsCheckerOpen] = useState(false);
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false); // State for Sign-Up modal
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const openChecker = () => setIsCheckerOpen(true);
   const closeChecker = () => setIsCheckerOpen(false);
@@ -25,10 +25,14 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      {/* Pass openSignUp to Header */}
+      <Header openSignUp={openSignUp} />
+
       <section id="features">
-        <HeroSection onLaunchChecker={openChecker} />
+        {/* Pass openSignUp to HeroSection */}
+        <HeroSection onLaunchChecker={openChecker} openSignUp={openSignUp} />
       </section>
+
       <section id="how-it-works">
         <HowItWorks />
       </section>
@@ -47,8 +51,6 @@ export default function Home() {
       <section id="contact">
         <Footer />
       </section>
-
-      
 
       {/* SignUpComponent Modal */}
       {isSignUpOpen && <SignUpComponent onClose={closeSignUp} />}

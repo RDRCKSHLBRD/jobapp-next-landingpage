@@ -1,4 +1,4 @@
-export default function HeroSection({ onLaunchChecker }) {
+export default function HeroSection({ onLaunchChecker, openSignUp }) {
   return (
     <section className="relative bg-[#F0F6FF] py-5">
       {/* Top Content: Heading, Subheading, and Buttons */}
@@ -43,6 +43,7 @@ export default function HeroSection({ onLaunchChecker }) {
             Hire Top Talent
           </button>
           <button
+            onClick={openSignUp} // Trigger Sign-Up modal
             className="bg-[#3B82F6] text-white text-[16px] font-medium leading-[24px] tracking-[0.005em] text-center px-[60px] py-[12px] rounded-[4px] hover:bg-blue-600"
             style={{
               textUnderlinePosition: 'from-font',
