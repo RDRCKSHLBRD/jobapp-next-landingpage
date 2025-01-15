@@ -48,15 +48,7 @@ export default function Home() {
         <Footer />
       </section>
 
-      {/* Add a button for opening the Sign-Up modal */}
-      <div className="fixed bottom-4 right-4">
-        <button
-          onClick={openSignUp}
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600"
-        >
-          Sign Up
-        </button>
-      </div>
+      
 
       {/* SignUpComponent Modal */}
       {isSignUpOpen && <SignUpComponent onClose={closeSignUp} />}
