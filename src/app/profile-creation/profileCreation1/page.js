@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ProgressBar from "@/components/ProgressBar"; // Ensure the path to ProgressBar is correct
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
+import ProgressBar from "@/components/ProgressBar";
 
 export default function ProfileCreationStep1() {
   const [jobType, setJobType] = useState({
@@ -10,6 +11,8 @@ export default function ProfileCreationStep1() {
     hybrid: false,
     remote: false,
   });
+
+  const router = useRouter(); // Initialize router
 
   const toggleJobType = (type) => {
     setJobType((prevState) => ({
@@ -20,9 +23,8 @@ export default function ProfileCreationStep1() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("Proceeding to the next page"); // Placeholder for advancing to the next page
-    // Navigate to Step 2 (profileCreation2)
-    router.push("/profile-creation/profileCreation2");
+    console.log("Proceeding to the next page");
+    router.push("/profile-creation/profileCreation2"); // Navigate to Step 2
   };
 
   return (
