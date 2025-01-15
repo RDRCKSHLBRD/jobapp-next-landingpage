@@ -62,7 +62,7 @@ export default function VerifyEmail({ email, onClose }) {
               id="otp"
               className="w-full h-12 px-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter OTP"
-              required
+              
             />
           </div>
 
