@@ -22,14 +22,15 @@ export default function Header({ openSignUp }) {
   // Ping Database Function
   const pingDatabase = async () => {
     try {
-      const response = await axios.get("/api/test-db"); // Call the API route
-      setPingResult(response.data.message || "No response message");
-      console.log("Ping successful:", response.data);
+      const response = await axios.post('/api/test-db'); // Ensure POST method
+      setPingResult(response.data.message || 'No response message');
+      console.log('Ping successful:', response.data);
     } catch (error) {
       setPingResult(`Error: ${error.message}`);
-      console.error("Ping failed:", error);
+      console.error('Ping failed:', error);
     }
   };
+  
 
   return (
     <>
