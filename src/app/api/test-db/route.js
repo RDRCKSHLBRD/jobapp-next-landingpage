@@ -2,8 +2,9 @@ import axios from 'axios';
 
 export async function POST(req) {
   try {
-    // Update to the correct backend port
-    const response = await axios.get('http://127.0.0.1:3001/api/ping'); 
+    // Use the API URL from environment variables
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:3001';
+    const response = await axios.get(`${apiUrl}/api/ping`);
     const data = response.data;
 
     return new Response(
