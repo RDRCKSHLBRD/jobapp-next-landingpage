@@ -47,6 +47,7 @@ export default function Header({ openSignUp }) {
           <button
             onClick={pingDatabase}
             className="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300"
+            style={{ display: 'none' }} // Hides the button
           >
             Ping DB
           </button>
