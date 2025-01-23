@@ -30,9 +30,11 @@ export default function SignUpComponent({ onClose }) {
     e.preventDefault();
     setLoading(true);
     setError(null);
-  
+
     console.log("Submitting form data:", formData); // Log form data
     try {
+      console.log("Payload sent to /api/signUp:", JSON.stringify(formData));
+
       const response = await fetch("/api/signUp", {
         method: "POST",
         headers: {
@@ -40,11 +42,12 @@ export default function SignUpComponent({ onClose }) {
         },
         body: JSON.stringify(formData),
       });
-  
+
       console.log("API Response Status:", response.status); // Log API status
-  
+
       if (response.ok) {
-        router.push("/profile-creation");
+        router.push("/profile-creation/profileCreation1");
+
       } else {
         const errorData = await response.json();
         console.log("API Error Response:", errorData); // Log API error response
@@ -57,7 +60,7 @@ export default function SignUpComponent({ onClose }) {
       setLoading(false);
     }
   };
-  
+
 
   return (
     <div
