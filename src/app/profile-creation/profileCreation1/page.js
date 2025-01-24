@@ -36,7 +36,9 @@ export default function ProfileCreationStep1() {
       }}
     >
       {/* Progress Bar */}
-      <ProgressBar progress={25} />
+      <div className="mt-8 mb-3">
+        <ProgressBar progress={25} />
+      </div>
 
       {/* Advertisement Banner */}
       <div
@@ -57,26 +59,31 @@ export default function ProfileCreationStep1() {
         <h1 className="text-[22px] font-medium text-gray-800">
           Hi there! 👋
         </h1>
-        <h2 className="text-[32px] font-semibold text-gray-900 mt-2">
+        <h2 className="text-[32px] font-semibold text-gray-900 mt-1">
           Let’s get started
         </h2>
       </div>
 
       {/* Outer Frame */}
-      <div className="relative flex flex-col items-center bg-transparent w-[1440px] h-[1338px] mt-8">
+      <div className="relative flex flex-col items-center bg-transparent w-[1440px] h-[1338px] mt-4">
         {/* Card Section */}
-        <div className="bg-white rounded-lg shadow-md p-8 max-w-[1440px] w-full md:w-[90%] lg:w-[631px] h-[894px] mt-4 relative">
+        <div className="bg-white rounded-lg shadow-md p-8 max-w-[1440px] w-full md:w-[90%] lg:w-[631px] h-[894px] mt-4 flex flex-col justify-between">
+
           {/* Profile Picture */}
-          <div className="absolute top-[-80px] left-4 w-[160px] h-[160px] rounded-full bg-[#F1F1F1] flex items-center justify-center">
-            <img
-              src="/images/icons/mage_edit.svg"
-              alt="Edit Icon"
-              className="absolute bottom-2 right-2 w-6 h-6 cursor-pointer"
-            />
+          <div className="flex items-start mb-1">
+            <div className="w-[160px] h-[160px] rounded-full bg-[#F1F1F1] flex items-center justify-center relative ml-[-5px]">
+              <img
+                src="/images/icons/mage_edit.svg"
+                alt="Edit Icon"
+                className="absolute bottom-2 right-2 w-6 h-6 cursor-pointer"
+              />
+            </div>
           </div>
 
+
+
           {/* Form */}
-          <form className="space-y-6 mt-20">
+          <form className="space-y-8">
             {/* First Name and Last Name */}
             <div className="flex space-x-4">
               <div className="flex-1">
@@ -185,11 +192,10 @@ export default function ProfileCreationStep1() {
                   <button
                     type="button"
                     key={type}
-                    className={`px-4 py-2 border rounded-md text-sm font-medium transition-colors ${
-                      jobType[type]
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-gray-700 border-gray-300"
-                    }`}
+                    className={`px-4 py-2 border rounded-md text-sm font-medium transition-colors ${jobType[type]
+                      ? "bg-blue-500 text-white"
+                      : "bg-white text-gray-700 border-gray-300"
+                      }`}
                     onClick={() => toggleJobType(type)}
                   >
                     {type.replace(/([A-Z])/g, " $1").trim()} +
