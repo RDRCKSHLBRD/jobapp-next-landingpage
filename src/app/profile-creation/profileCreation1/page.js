@@ -21,11 +21,42 @@ export default function ProfileCreationStep1() {
     }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-    router.push("/profile-creation/profileCreation2"); // Navigate to Step 2
+  
+    const formData = {
+      firstName: document.querySelector('input[name="profile-firstName"]').value,
+      lastName: document.querySelector('input[name="profile-lastName"]').value,
+      email: document.querySelector('input[name="profile-email"]').value,
+      contactNumber: document.querySelector('input[name="phoneNumber"]').value,
+      country: document.querySelector('input[name="country"]').value,
+      city: document.querySelector('input[name="city"]').value,
+      jobPreferences: jobType, // Use the `jobType` state
+    };
+  
+    try {
+      const response = await fetch("/api/profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log("Profile created successfully");
+        router.push("/profile-creation/profileCreation2"); // Navigate to the next step
+      } else {
+        const errorData = await response.json();
+        console.error("Error creating profile:", errorData.error);
+        alert(`Error: ${errorData.error}`);
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("An unexpected error occurred. Please try again.");
+    }
   };
+  
 
   return (
     <div
