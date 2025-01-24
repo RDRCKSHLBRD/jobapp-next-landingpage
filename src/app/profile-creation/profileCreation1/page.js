@@ -187,14 +187,14 @@ export default function ProfileCreationStep1() {
               <label className="block text-lg font-medium text-gray-700">
                 Job Type
               </label>
-              <div className="flex space-x-4 mt-2">
+              <div className="flex justify-between mt-4">
                 {Object.keys(jobType).map((type) => (
                   <button
                     type="button"
                     key={type}
-                    className={`px-4 py-2 border rounded-md text-sm font-medium transition-colors ${jobType[type]
-                      ? "bg-blue-500 text-white"
-                      : "bg-white text-gray-700 border-gray-300"
+                    className={`px-6 py-3 border rounded-[62px] text-sm font-medium transition-colors ${jobType[type]
+                        ? "bg-blue-500 text-white"
+                        : "bg-white text-gray-700 border-gray-300"
                       }`}
                     onClick={() => toggleJobType(type)}
                   >
@@ -203,6 +203,7 @@ export default function ProfileCreationStep1() {
                 ))}
               </div>
             </div>
+
           </form>
         </div>
 
