@@ -85,6 +85,20 @@ export default function ProfileCreationStep2() {
       <div className="mt-8 mb-3">
         <ProgressBar progress={66} />
       </div>
+      {/* Advertisement Banner */}
+      <div
+        className="flex items-center justify-center bg-[#EFEEFF] border border-[#C6C6C6] rounded-[4px] w-[683px] h-[52px] mt-4"
+      >
+        <img
+          src="/images/icons/AI-starVector.svg"
+          alt="AI Star Vector"
+          className="w-6 h-6 mr-2"
+        />
+        <span className="text-sm font-medium text-gray-700 text-center">
+          Unlock a Free AI-Powered Resume Guide – Complete Your Profile Now!
+        </span>
+      </div>
+
 
       {/* Header Section */}
       <div className="text-center mt-6">
@@ -133,11 +147,10 @@ export default function ProfileCreationStep2() {
                 <button
                   type="button"
                   key={role}
-                  className={`px-4 py-2 h-[44px] rounded-[62px] text-sm font-medium transition-colors ${
-                    desiredRoles.includes(role)
+                  className={`px-4 py-2 h-[44px] rounded-[62px] text-sm font-medium transition-colors ${desiredRoles.includes(role)
                       ? "bg-blue-500 text-white"
                       : "bg-white text-gray-700 border border-gray-300"
-                  }`}
+                    }`}
                   onClick={() => handleRoleSelect(role)}
                 >
                   {role}
