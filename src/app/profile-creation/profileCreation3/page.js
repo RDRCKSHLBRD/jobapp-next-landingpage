@@ -65,8 +65,6 @@ export default function ProfileCreationStep3() {
         </span>
       </div>
 
-
-
       {/* Header Section */}
       <div className="text-center mt-6">
         <h2 className="text-[32px] font-semibold text-gray-900">
@@ -82,7 +80,7 @@ export default function ProfileCreationStep3() {
         className="bg-white rounded-lg shadow-md p-8"
         style={{
           width: "584px",
-          height: "658px",
+          height: "466px",
         }}
       >
         <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -109,7 +107,13 @@ export default function ProfileCreationStep3() {
             <label className="block text-lg font-medium text-gray-700">
               Upload Resume
             </label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center relative hover:border-blue-500 transition">
+            <div
+              className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center relative hover:border-blue-500 transition"
+              style={{
+                width: "504px",
+                height: "226px",
+              }}
+            >
               <input
                 type="file"
                 id="resumeUpload"
@@ -125,7 +129,7 @@ export default function ProfileCreationStep3() {
                 className="mx-auto mb-3"
               />
               <p className="text-sm text-gray-500">
-                Drag and drop your resume here, or{" "}
+                Drag and drop your resume here, or{' '}
                 <button
                   type="button"
                   className="text-blue-500 hover:underline font-medium"
@@ -140,16 +144,18 @@ export default function ProfileCreationStep3() {
               )}
             </div>
           </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 transition-colors"
-          >
-            Get Started
-          </button>
         </form>
       </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="mt-4 py-3 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 transition-colors"
+        style={{ width: "584px" }}
+        onClick={handleFormSubmit}
+      >
+        Get Started
+      </button>
     </div>
   );
 }
