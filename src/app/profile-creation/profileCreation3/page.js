@@ -51,12 +51,28 @@ export default function ProfileCreationStep3() {
         <ProgressBar progress={100} />
       </div>
 
+      {/* Advertisement Banner */}
+      <div
+        className="flex items-center justify-center bg-[#EFEEFF] border border-[#C6C6C6] rounded-[4px] w-[683px] h-[52px] mt-4"
+      >
+        <img
+          src="/images/icons/AI-starVector.svg"
+          alt="AI Star Vector"
+          className="w-6 h-6 mr-2"
+        />
+        <span className="text-sm font-medium text-gray-700 text-center">
+          Unlock a Free AI-Powered Resume Guide – Complete Your Profile Now!
+        </span>
+      </div>
+
+
+
       {/* Header Section */}
       <div className="text-center mt-6">
         <h2 className="text-[32px] font-semibold text-gray-900">
           Build Your Profile
         </h2>
-        <p className="text-[18px] text-gray-700 mt-2">
+        <p className="text-[18px] text-gray-700 mt-2 mb-7">
           Upload your resume and portfolio to complete your profile
         </p>
       </div>
@@ -65,8 +81,8 @@ export default function ProfileCreationStep3() {
       <div
         className="bg-white rounded-lg shadow-md p-8"
         style={{
-          width: "715px",
-          height: "550px",
+          width: "584px",
+          height: "658px",
         }}
       >
         <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -74,7 +90,7 @@ export default function ProfileCreationStep3() {
           <div>
             <label
               htmlFor="portfolioLink"
-              className="block text-lg font-medium text-gray-700"
+              className="block text-lg font-medium text-gray-700 mb-5"
             >
               Portfolio Link (Optional)
             </label>
@@ -130,7 +146,7 @@ export default function ProfileCreationStep3() {
             type="submit"
             className="w-full py-3 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 transition-colors"
           >
-            Save & Continue
+            Get Started
           </button>
         </form>
       </div>
