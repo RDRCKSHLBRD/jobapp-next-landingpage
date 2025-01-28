@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import ProgressBar from "@/components/ProgressBar";
 import Image from "next/image";
 
 export default function ProfileCreationStep3() {
   const [portfolioLink, setPortfolioLink] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
+  const router = useRouter(); // Initialize useRouter
 
   const handleFileUpload = (e) => {
     setResumeFile(e.target.files[0]);
@@ -27,6 +29,7 @@ export default function ProfileCreationStep3() {
 
       if (response.ok) {
         console.log("Profile details saved successfully");
+        router.push("/dashboard"); // Navigate to Dashboard
       } else {
         const errorData = await response.json();
         console.error("Error saving profile details:", errorData.error);
@@ -129,7 +132,7 @@ export default function ProfileCreationStep3() {
                 className="mx-auto mb-3"
               />
               <p className="text-sm text-gray-500">
-                Drag and drop your resume here, or{' '}
+                Drag and drop your resume here, or{" "}
                 <button
                   type="button"
                   className="text-blue-500 hover:underline font-medium"
